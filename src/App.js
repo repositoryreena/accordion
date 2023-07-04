@@ -9,7 +9,7 @@ function App() {
       <h1>Project 2: FAQ/Accordion</h1>
       <div className="container">
         <div className="blue-box">
-          <h2>Frequently Asked Questions</h2>
+          <h2>Songs</h2>
           <div className="white-box">
             <FAQ />
           </div>
