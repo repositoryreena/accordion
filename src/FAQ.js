@@ -1,3 +1,4 @@
+//It imports React, the useState and useRef hooks, the Accordion component from "./Accordion.js," and the stylesheet from "styles.css."
 import React, { useState, useRef } from "react";
 import Accordion from "./Accordion.js";
 import "./styles.css";
@@ -6,7 +7,7 @@ import bohemianrhapsody from "./bohemianrhapsody.mp3";
 import imagine from "./imagine.mp3";
 
 function FAQ() {
-
+//Inside the FAQ function component, it defines the lyrics for three songs: "La Vie En Rose," "Bohemian Rhapsody," and "Imagine."
   const lavieenrose2 = `Hold me close and hold me fast
   The magic spell you cast
   This is la vie en rose
@@ -109,14 +110,17 @@ function FAQ() {
   I hope someday you'll join us
   And the world will live as one`
 
+  //It uses three state variables (isPlaying1, isPlaying2, isPlaying3) to track whether each song is currently playing or not.
   const [isPlaying1, setIsPlaying1] = useState(false);
   const [isPlaying2, setIsPlaying2] = useState(false);
   const [isPlaying3, setIsPlaying3] = useState(false);
 
+  //It creates three ref objects (audioPlayerRef1, audioPlayerRef2, audioPlayerRef3) to reference the audio elements for each song.
   const audioPlayerRef1 = useRef(null);
   const audioPlayerRef2 = useRef(null);
   const audioPlayerRef3 = useRef(null);
 
+  //It defines three functions (toggleSong1, toggleSong2, toggleSong3) that handle toggling the playback of each song. These functions play or pause the audio and update the corresponding isPlaying state variable.
   const toggleSong1 = () => {
     const audioPlayer = audioPlayerRef1.current;
     if (audioPlayer.paused) {
@@ -153,6 +157,7 @@ function FAQ() {
     }
   };
 
+  //The return statement renders three instances of the Accordion component. Each accordion represents one of the songs and includes a button to toggle playback.
   return (
     <div>
       <Accordion
@@ -188,7 +193,7 @@ function FAQ() {
         }
         content={<pre>{imagine2}</pre>}
       />
-
+{/* Three audio elements are included at the end of the component, each referencing an audio file for one of the songs. */}
       <audio ref={audioPlayerRef1} src={lavieenrose} />
       <audio ref={audioPlayerRef2} src={bohemianrhapsody} />
       <audio ref={audioPlayerRef3} src={imagine} />
